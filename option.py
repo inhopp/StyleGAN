@@ -15,7 +15,7 @@ def parse_args():
     parser.add_argument("--data_name", type=str, default="ffhq")
 
     # training setting
-    parser.add_argument("--start_img_size", type=int, default=4)
+    parser.add_argument("--start_img_size", type=int, default=8)
     parser.add_argument("--z_dim", type=int, default=512)
     parser.add_argument("--w_dim", type=int, default=512)
     parser.add_argument("--in_channels", type=int, default=512)

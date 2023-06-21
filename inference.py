@@ -12,7 +12,7 @@ def main(opt):
     ft_path = os.path.join(opt.ckpt_root, "Gen.pt")
 
     model = Generator(
-        z_dim=opt.z_dim, in_channels=opt.in_channels, img_channels=3).to(dev)
+        z_dim=opt.z_dim, w_dim=opt.w_dim, in_channels=opt.in_channels, img_channels=3).to(dev)
     model.load_state_dict(torch.load(ft_path))
 
     alpha = 1.0
