@@ -64,7 +64,7 @@ class Solver():
                     cur_batch_size = real.shape[0]
 
                     noise = torch.randn(
-                        cur_batch_size, opt.z_dim, 1, 1).to(self.dev)
+                        cur_batch_size, opt.z_dim).to(self.dev)
                     fake = self.generator(noise, alpha, step)
 
                     # Train Discriminator
