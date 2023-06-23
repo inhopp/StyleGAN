@@ -15,7 +15,7 @@ def parse_args():
     parser.add_argument("--data_name", type=str, default="ffhq")
 
     # training setting
-    parser.add_argument("--start_img_size", type=int, default=8)
+    parser.add_argument("--start_img_size", type=int, default=4)
     parser.add_argument("--z_dim", type=int, default=512)
     parser.add_argument("--w_dim", type=int, default=512)
     parser.add_argument("--in_channels", type=int, default=512)
@@ -28,7 +28,7 @@ def parse_args():
     parser.add_argument("--n_epoch", type=int, default=30)
     parser.add_argument("--num_workers", type=int, default=4)
     parser.add_argument("--batch_size", type=list,
-                        default=[32, 32, 32, 32, 16, 8, 4, 2])
+                        default=[32, 32, 32, 32, 32, 16, 8, 4, 2])
 
     # misc
     parser.add_argument("--ckpt_root", type=str, default="./FT_model")

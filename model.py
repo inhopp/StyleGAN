@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from math import log2
 
-factors = [1, 1, 1, 1 / 2, 1 / 4, 1 / 8, 1 / 16, 1 / 32]
+factors = [1, 1, 1, 1, 1 / 2, 1 / 4, 1 / 8, 1 / 16, 1 / 32]
 
 
 class PixelNorm(nn.Module):
@@ -115,7 +115,7 @@ class GenBlcok(nn.Module):
         super(GenBlcok, self).__init__()
 
         self.conv1 = WSConv2d(in_channels, out_channels)
-        self.conv2 = WSConv2d(in_channels, out_channels)
+        self.conv2 = WSConv2d(out_channels, out_channels)
         self.leaky = nn.LeakyReLU(0.2, inplace=True)
         self.inject_noise1 = InjectNoise(out_channels)
         self.inject_noise2 = InjectNoise(out_channels)
