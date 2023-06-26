@@ -19,7 +19,7 @@ def main(opt):
     step = 8
 
     for i in range(10):
-        noise = torch.rand(1, opt.z_dim, 1, 1).to(dev)
+        noise = torch.rand(1, opt.z_dim).to(dev)
         img = model(noise, alpha, step)
         save_image(img*0.5+0.5, f"saved_examples/img_{i}.png")
 
